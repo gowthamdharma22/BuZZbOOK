@@ -1,0 +1,124 @@
+.button {
+    margin-top: 20px;
+    margin-left: 2px;
+    border: none;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    height: 2.25rem;
+    cursor: pointer;
+    padding: 0 1rem 0 1rem;
+    transition: 150ms all;
+    background-color: var(--prime-black);
+  }
+  
+  .button.dislike .icon svg.prime {
+    animation: dislike 550ms forwards ease-in-out;
+  }
+  
+  .button.active {
+    background-color: var(--prime-glass);
+    /* cursor: default; */
+  }
+  
+  .button.active .counter {
+    color: var(--prime-black);
+  }
+  
+  .button.active .icon svg {
+    color: var(--prime-black);
+  }
+  
+  .button.active .icon svg.prime {
+    animation: like 550ms forwards ease-in-out;
+  }
+  
+  .counter {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--prime-glass);
+    padding: 1rem 0 1rem 1rem;
+    transition: 150ms all;
+  }
+  
+  .icon {
+    padding: 0.5rem;
+    transition: 150ms all;
+    position: relative;
+    width: 1rem;
+    height: 1rem;
+  }
+  
+  .icon svg {
+    color: var(--prime-glass);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1rem;
+    height: 1rem;
+  }
+  
+  .icon svg.normal {
+    z-index: 1;
+    opacity: 0.5;
+  }
+  
+  .icon svg.prime {
+    z-index: 2;
+  }
+  
+  @keyframes dislike {
+    0% {
+      color: var(--prime-black);
+      transform: translate(0, 0%);
+    }
+    100% {
+      color: var(--prime-glass);
+      transform: translate(0, 300%) scale(0);
+    }
+  }
+  
+  @keyframes like {
+    0% {
+      color: var(--prime-black);
+      transform: translate(0, 0%);
+    }
+    100% {
+      color: var(--prime-black);
+      transform: translate(0, -300%) scale(0);
+    }
+  }
+  
+
+  @media screen and (max-width:800px){
+    .button{
+      height: 1.8rem;
+    }
+    .counter {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--prime-glass);
+      padding: 1rem 0 1rem 1rem;
+      transition: 150ms all;
+    }
+    
+    .icon {
+      padding: 0.5rem;
+      transition: 150ms all;
+      position: relative;
+      width: 0.8rem;
+      height: 0.8rem;
+    }
+    
+    .icon svg {
+      color: var(--prime-glass);
+      position: absolute;
+      top: 3px;
+      left: 5px;
+      width: 0.8rem;
+      height: 0.8rem;
+    }
+
+  }
